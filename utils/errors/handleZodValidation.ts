@@ -1,7 +1,7 @@
 import { ZodError, ZodIssue } from 'zod';
-import { IErrorMessage, IErrorResponse } from '../../interfaces/types';
+import { IErrorMessage, IErrorResponse } from '../interfaces/types';
 
-const handleZodError = (error: ZodError): IErrorResponse => {
+const handleZodValidation = (error: ZodError): IErrorResponse => {
     const errors: IErrorMessage[] = error.issues.map((issue: ZodIssue) => {
         return {
             path: issue?.path[issue.path.length - 1],
@@ -18,4 +18,4 @@ const handleZodError = (error: ZodError): IErrorResponse => {
     };
 };
 
-export default handleZodError;
+export default handleZodValidation;

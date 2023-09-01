@@ -1,12 +1,11 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
-import config from './config';
-import ApiError from './errors/ApiError';
-import { IErrorMessage } from '../interfaces/types';
-import handleValidationError from './errors/handleValidationError';
-import handleCastError from './errors/handleCastError';
-import handleZodError from './errors/handleZodValidation';
+import { Prisma } from '@prisma/client';
 import { ZodError } from 'zod';
-
+import { IErrorMessage } from './interfaces/types';
+import handleValidationError from './errors/handleValidationError';
+import handleZodValidation from './errors/handleZodValidation';
+import handleClientError from './errors/handleClientError';
+import ApiError from './errors/ApiError';
 
 const globalErrorHandler: ErrorRequestHandler = (
     error,
@@ -19,19 +18,18 @@ const globalErrorHandler: ErrorRequestHandler = (
     let message = 'Something went wrong !';
     let errorMessages: IErrorMessage[] = [];
 
-    if (error?.name === 'ValidationError') {
+    if (error instanceof Prisma.PrismaClientValidationError) {
         const simplifiedError = handleValidationError(error);
         statusCode = simplifiedError.statusCode;
-
         message = simplifiedError.message;
         errorMessages = simplifiedError.errorMessages;
     } else if (error instanceof ZodError) {
-        const simplifiedError = handleZodError(error);
+        const simplifiedError = handleZodValidation(error);
         statusCode = simplifiedError.statusCode;
         message = simplifiedError.message;
         errorMessages = simplifiedError.errorMessages;
-    } else if (error?.name === 'CastError') {
-        const simplifiedError = handleCastError(error);
+    } else if (error instanceof Prisma.PrismaClientKnownRequestError) {
+        const simplifiedError = handleClientError(error);
         statusCode = simplifiedError.statusCode;
         message = simplifiedError.message;
         errorMessages = simplifiedError.errorMessages;
@@ -62,7 +60,7 @@ const globalErrorHandler: ErrorRequestHandler = (
         success: false,
         message,
         errorMessages,
-        stack: config.env !== 'production' ? error?.stack : undefined,
+        stack: process.env.NODE_ENV !== 'production' ? error?.stack : undefined,
     });
 };
 

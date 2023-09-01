@@ -1,17 +1,13 @@
-import mongoose from 'mongoose';
-import { IErrorMessage, IErrorResponse } from '../../interfaces/types';
+import { Prisma } from '@prisma/client';
+import { IErrorResponse } from '../interfaces/types';
 
 const handleValidationError = (
-    error: mongoose.Error.ValidationError
+    error: Prisma.PrismaClientValidationError
 ): IErrorResponse => {
-    const errors: IErrorMessage[] = Object.values(error.errors).map(
-        (el: mongoose.Error.ValidatorError | mongoose.Error.CastError) => {
-            return {
-                path: el?.path,
-                message: el?.message,
-            };
-        }
-    );
+    const errors = [{
+        path: "",
+        message: error.message,
+    }]
     const statusCode = 400;
     return {
         statusCode,
