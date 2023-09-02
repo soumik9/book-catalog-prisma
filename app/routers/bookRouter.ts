@@ -6,9 +6,11 @@ import GetBooks from '../controllers/book/GetBooks';
 import CreateBook from '../controllers/book/CreateBook';
 import UpdateBook from '../controllers/book/UpdateBook';
 import DeleteBook from '../controllers/book/DeleteBook';
+import GetBooksByCategoryId from '../controllers/book/GetBooksByCategoryId';
 const router = express.Router();
 
 //routes
+router.get('/:categoryId/category', GetBooksByCategoryId);
 router.get('/:id', GetBook);
 router.get('/', GetBooks);
 router.post('/create-book', auth(ENUM_USER_ROLE.ADMIN), CreateBook);
