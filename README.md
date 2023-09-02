@@ -15,7 +15,7 @@ Book Catalog Routes:
 ## Category
 <hr />
 
-- [] [POST] - [api/v1/categories/create-category]() <br /> <br />
+- [x] [POST] - [api/v1/categories/create-category]() <br /> <br />
 - [] [GET] - [api/v1/categories]() <br /> <br />
 - [] [SINGLE_GET] - [api/v1/categories/6177a5b87d32123f08d2f5d4]() <br /> <br />
 - [] [PATCH] - [api/v1/categories/6177a5b87d32123f08d2f5d4]() <br /> <br />
