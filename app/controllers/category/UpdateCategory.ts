@@ -8,8 +8,8 @@ import prisma from '../../../utils/helpers/prisma';
 const UpdateCategory: RequestHandler = catchAsync(
     async (req: Request, res: Response) => {
 
-        // update user
-        const result = await prisma.user.update({
+        // update Category
+        const result = await prisma.category.update({
             where: {
                 id: req.params.id
             },
@@ -19,7 +19,7 @@ const UpdateCategory: RequestHandler = catchAsync(
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'User updated successfully!',
+            message: 'Category updated successfully!',
             data: result,
         });
     }

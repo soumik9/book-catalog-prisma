@@ -8,8 +8,8 @@ import prisma from '../../../utils/helpers/prisma';
 const DeleteCategory: RequestHandler = catchAsync(
     async (req: Request, res: Response) => {
 
-        // delete a user
-        const result = await prisma.user.delete({
+        // delete a category
+        const result = await prisma.category.delete({
             where: {
                 id: req.params.id
             },
@@ -18,7 +18,7 @@ const DeleteCategory: RequestHandler = catchAsync(
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'User deleted successfully!',
+            message: 'Category deleted successfully!',
             data: result,
         });
     }

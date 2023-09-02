@@ -17,9 +17,9 @@ Book Catalog Routes:
 
 - [x] [POST] - [api/v1/categories/create-category]() <br /> <br />
 - [x] [GET] - [api/v1/categories]() <br /> <br />
-- [x] [SINGLE_GET] - [api/v1/categories/6177a5b87d32123f08d2f5d4]() <br /> <br />
-- [] [PATCH] - [api/v1/categories/6177a5b87d32123f08d2f5d4]() <br /> <br />
-- [] [DELETE] - [api/v1/categories/6177a5b87d32123f08d2f5d4]() <br /> <br />
+- [x] [SINGLE_GET] - [api/v1/categories/8ca0c987-8a79-456b-b688-b85ac9a2a948]() <br /> <br />
+- [x] [PATCH] - [api/v1/categories/da492fd4-aa5b-472b-82a0-b9dddda3f7d8]() <br /> <br />
+- [x] [DELETE] - [api/v1/categories/4d585089-b8a7-4f22-b0a7-b8d7e61733a2]() <br /> <br />
 
 ## Category
 <hr />
