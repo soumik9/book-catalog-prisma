@@ -9,8 +9,8 @@ import CreateCategory from '../controllers/category/CreateCategory';
 const router = express.Router();
 
 //routes
-router.get('/:id', auth(ENUM_USER_ROLE.ADMIN), GetCategory);
-router.get('/', auth(ENUM_USER_ROLE.ADMIN), GetCategories);
+router.get('/:id', GetCategory);
+router.get('/', GetCategories);
 router.post('/create-category', auth(ENUM_USER_ROLE.ADMIN), CreateCategory);
 router.patch('/:id', auth(ENUM_USER_ROLE.ADMIN), UpdateCategory);
 router.delete('/:id', auth(ENUM_USER_ROLE.ADMIN), DeleteCategory);

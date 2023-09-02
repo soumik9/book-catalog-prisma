@@ -8,13 +8,13 @@ import prisma from '../../../utils/helpers/prisma';
 const GetCategories: RequestHandler = catchAsync(
     async (req: Request, res: Response) => {
 
-        // get all users
-        const result = await prisma.user.findMany();
+        // get all Categories
+        const result = await prisma.category.findMany();
 
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'Users retrived successfully!',
+            message: 'Categories retrived successfully!',
             data: result,
         });
     }
