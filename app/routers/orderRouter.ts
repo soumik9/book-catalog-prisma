@@ -7,7 +7,7 @@ const router = express.Router();
 
 //routes
 
-router.get('/', auth(ENUM_USER_ROLE.ADMIN), GetOrders);
+router.get('/', auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.CUSTOMER), GetOrders);
 router.post('/create-order', auth(ENUM_USER_ROLE.CUSTOMER), createOrder);
 
 

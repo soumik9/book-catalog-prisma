@@ -34,6 +34,6 @@ Book Catalog Routes:
 ## Order
 <hr />
 
-- [] [POST] - [api/v1/orders/create-order]() <br /> <br />
-- [] [GET] - [api/v1/orders]() <br /> <br />
+- [x] [POST] - [api/v1/orders/create-order]() <br /> <br />
+- [x] [GET] - [api/v1/orders]() <br /> <br />
 - [] [GET] - [api/v1/orders/:orderId]() <br /> <br />
