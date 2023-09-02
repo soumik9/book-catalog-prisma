@@ -1,13 +1,13 @@
 import express from 'express';
 
-import bookRouter from '../routers/bookRouter'
+import authRouter from '../routers/authRouter'
 
 const router = express.Router();
 
 const apiRoutes: { path: string, route: any }[] = [
     {
-        path: '/book',
-        route: bookRouter,
+        path: '/auth',
+        route: authRouter,
     },
 ];
 

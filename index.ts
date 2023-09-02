@@ -2,10 +2,10 @@ import express, { Application, NextFunction, Request, Response } from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 import routes from './app/routes/routes';
-import globalErrorHandler from './utils/globalErrorHandler';
+import globalErrorHandler from './utils/helpers/globalErrorHandler';
 import httpStatus from 'http-status';
 import { Server } from 'http';
-import bootstrap from './utils/bootstrap';
+import bootstrap from './utils/helpers/bootstrap';
 
 require('dotenv').config();
 const app: Application = express();

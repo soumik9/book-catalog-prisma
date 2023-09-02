@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "UserRoleENUM" AS ENUM ('Admin', 'Customer');
+CREATE TYPE "UserRoleENUM" AS ENUM ('admin', 'customer');
 
 -- CreateTable
 CREATE TABLE "users" (
@@ -7,10 +7,12 @@ CREATE TABLE "users" (
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "role" "UserRoleENUM" NOT NULL DEFAULT 'Customer',
+    "role" "UserRoleENUM" NOT NULL DEFAULT 'customer',
     "contactNo" TEXT NOT NULL,
     "address" TEXT NOT NULL,
     "profileImg" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );
@@ -19,6 +21,8 @@ CREATE TABLE "users" (
 CREATE TABLE "categories" (
     "id" TEXT NOT NULL,
     "title" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "categories_pkey" PRIMARY KEY ("id")
 );
@@ -32,6 +36,8 @@ CREATE TABLE "books" (
     "genre" TEXT NOT NULL,
     "publicationDate" TIMESTAMP(3) NOT NULL,
     "categoryId" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "books_pkey" PRIMARY KEY ("id")
 );
