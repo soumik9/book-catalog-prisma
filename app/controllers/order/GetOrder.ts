@@ -4,16 +4,20 @@ import httpStatus from 'http-status'
 import sendResponse from '../../../utils/helpers/SendResponse';
 import prisma from '../../../utils/helpers/prisma';
 import { Order, UserRoles } from '@prisma/client';
+import ApiError from '../../../utils/errors/ApiError';
 
 
-const GetOrders: RequestHandler = catchAsync(
+const GetOrder: RequestHandler = catchAsync(
     async (req: Request, res: Response) => {
 
         let result;
 
         if (req?.user?.role === UserRoles.admin) {
             // get all orders
-            result = await prisma.order.findMany({
+            result = await prisma.order.findUnique({
+                where: {
+                    id: req.params.orderId
+                },
                 include: {
                     orderedBooks: true,
                     user: true
@@ -21,24 +25,30 @@ const GetOrders: RequestHandler = catchAsync(
             });
         } else {
             // get all orders by specific customer
-            result = await prisma.order.findMany({
+            result = await prisma.order.findUnique({
                 where: {
-                    userId: req?.user?.userId
+                    userId: req?.user?.userId,
+                    id: req.params.orderId
                 },
                 include: {
                     orderedBooks: true,
                     user: true
                 }
             });
+
+            if (!result) {
+                // Throw an error indicating that no order was found
+                throw new ApiError(httpStatus.BAD_REQUEST, 'You are not authorized to this order!');
+            }
         }
 
-        sendResponse<Order[]>(res, {
+        sendResponse<Order>(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'Orders retrived successfully!',
+            message: 'Order retrived successfully!',
             data: result,
         });
     }
 )
 
-export default GetOrders;
+export default GetOrder;
