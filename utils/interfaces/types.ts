@@ -19,6 +19,7 @@ export interface IApiReponse<T> {
         page?: number;
         size?: number;
         total: number;
+        totalPage?: number;
     };
     data?: T | null;
 };
