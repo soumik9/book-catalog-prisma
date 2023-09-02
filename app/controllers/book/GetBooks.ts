@@ -18,13 +18,9 @@ const GetBooks: RequestHandler = catchAsync(
         const { size, page, skip } = calculatePagination(options);
         const { searchTerm, minPrice, maxPrice, ...filterData } = filters;
 
-        console.log(filters);
-
         // Extract minPrice and maxPrice from query parameters
         const minPriceConverted = parseFloat(req.query.minPrice as string) || undefined;
         const maxPriceConverted = parseFloat(req.query.maxPrice as string) || undefined;
-
-
 
         const andConditions: any = [];
 
