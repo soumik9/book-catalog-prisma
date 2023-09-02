@@ -7,9 +7,9 @@ Book Catalog Routes:
 
 - [x] [POST] - [api/v1/auth/signup]() <br /> <br />
 - [x] [GET] - [api/v1/users]() <br /> <br />
-- [x] [SINGLE_GET] - [api/v1/users/6177a5b87d32123f08d2f5d4]() <br /> <br />
-- [] [PATCH] - [api/v1/users/6177a5b87d32123f08d2f5d4]() <br /> <br />
-- [] [DELETE] - [api/v1/users/6177a5b87d32123f08d2f5d4]() <br /> <br />
+- [x] [SINGLE_GET] - [api/v1/users/9cd1781a-116b-427a-bb15-c8e46a69db41]() <br /> <br />
+- [x] [PATCH] - [api/v1/users/9cd1781a-116b-427a-bb15-c8e46a69db41]() <br /> <br />
+- [x] [DELETE] - [api/v1/users/e730efae-f32a-401e-9a2d-61f07dbe5bd4]() <br /> <br />
 - [] [GET] - [api/v1/profile]() <br /> <br />
 
 ## Category
