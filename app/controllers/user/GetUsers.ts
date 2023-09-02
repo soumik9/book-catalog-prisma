@@ -3,6 +3,7 @@ import catchAsync from '../../../utils/helpers/catchAsync';
 import httpStatus from 'http-status'
 import sendResponse from '../../../utils/helpers/SendResponse';
 import prisma from '../../../utils/helpers/prisma';
+import { User } from '@prisma/client';
 
 
 const GetUsers: RequestHandler = catchAsync(
@@ -11,7 +12,7 @@ const GetUsers: RequestHandler = catchAsync(
         // get all users
         const result = await prisma.user.findMany();
 
-        sendResponse(res, {
+        sendResponse<User[]>(res, {
             statusCode: httpStatus.OK,
             success: true,
             message: 'Users retrived successfully!',

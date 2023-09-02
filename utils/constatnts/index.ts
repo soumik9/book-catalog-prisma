@@ -4,7 +4,13 @@ export enum ENUM_USER_ROLE {
 }
 
 // pagination props
-export const paginationProps: string[] = ['page', 'limit', 'sortBy', 'sortOrder'];
+export const paginationProps: string[] = ['page', 'size', 'sortBy', 'sortOrder'];
 
+// book search and filter
 export const bookFilterableFields: string[] = ['searchTerm', 'title', 'author'];
-export const bookSearchableFields: string[] = ['title', 'author', 'genre']
+export const bookSearchableFields: string[] = ['title', 'author', 'genre',];
+
+export const bookRelationalFields: string[] = ['categoryId'];
+export const bookRelationalFieldsMapper: { [key: string]: string } = {
+    categoryId: 'category',
+};

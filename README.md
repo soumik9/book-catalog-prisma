@@ -21,17 +21,17 @@ Book Catalog Routes:
 - [x] [PATCH] - [api/v1/categories/da492fd4-aa5b-472b-82a0-b9dddda3f7d8]() <br /> <br />
 - [x] [DELETE] - [api/v1/categories/4d585089-b8a7-4f22-b0a7-b8d7e61733a2]() <br /> <br />
 
-## Category
+## Book
 <hr />
 
-- [] [POST] - [api/v1/books/create-book]() <br /> <br />
+- [x] [POST] - [api/v1/books/create-book]() <br /> <br />
 - [] [GET] - [api/v1/books]() <br /> <br />
 - [] [GET] - [api/v1/books/:categoryId/category]() <br /> <br />
-- [] [GET] - [api/v1/books/:id]() <br /> <br />
+- [x] [GET] - [api/v1/books/4066ca6e-e9d6-415c-b8cc-c49c9ad44d8d]() <br /> <br />
 - [] [PATCH] - [api/v1/books/:id]() <br /> <br />
 - [] [DELETE] - [api/v1/books/:id]() <br /> <br />
 
-## Category
+## Order
 <hr />
 
 - [] [POST] - [api/v1/orders/create-order]() <br /> <br />

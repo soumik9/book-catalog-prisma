@@ -3,6 +3,7 @@ import catchAsync from '../../../utils/helpers/catchAsync';
 import httpStatus from 'http-status'
 import sendResponse from '../../../utils/helpers/SendResponse';
 import prisma from '../../../utils/helpers/prisma';
+import { User } from '@prisma/client';
 
 
 const Signup: RequestHandler = catchAsync(
@@ -13,7 +14,7 @@ const Signup: RequestHandler = catchAsync(
             data: req.body
         });
 
-        sendResponse(res, {
+        sendResponse<User>(res, {
             statusCode: httpStatus.OK,
             success: true,
             message: 'User created successfully!',

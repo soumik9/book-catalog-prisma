@@ -3,27 +3,22 @@ import catchAsync from '../../../utils/helpers/catchAsync';
 import httpStatus from 'http-status'
 import sendResponse from '../../../utils/helpers/SendResponse';
 import prisma from '../../../utils/helpers/prisma';
-import { Category } from '@prisma/client';
+import { Book } from '@prisma/client';
 
-
-const UpdateCategory: RequestHandler = catchAsync(
+const GetBooksByCategoryId: RequestHandler = catchAsync(
     async (req: Request, res: Response) => {
 
-        // update Category
-        const result = await prisma.category.update({
-            where: {
-                id: req.params.id
-            },
-            data: req.body
-        });
+        // get all books with filter
+        const result = await prisma.book.findMany();
 
-        sendResponse<Category>(res, {
+
+        sendResponse<Book[]>(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'Category updated successfully!',
+            message: 'Books with associated category data fetched successfully!',
             data: result,
         });
     }
 )
 
-export default UpdateCategory;
+export default GetBooksByCategoryId;

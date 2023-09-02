@@ -8,20 +8,20 @@ import prisma from '../../../utils/helpers/prisma';
 const GetBook: RequestHandler = catchAsync(
     async (req: Request, res: Response) => {
 
-        // get single category
-        const result = await prisma.category.findMany({
+        // get single book
+        const result = await prisma.book.findMany({
             where: {
                 id: req.params.id,
             },
-            include: {
-                books: true
-            }
+            // include: {
+            //     category: true
+            // }
         });
 
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'Category retrived successfully!',
+            message: 'Book fetched successfully!',
             data: result,
         });
     }

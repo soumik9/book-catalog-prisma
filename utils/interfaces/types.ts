@@ -17,7 +17,7 @@ export interface IApiReponse<T> {
     message?: string | null;
     meta?: {
         page?: number;
-        limit?: number;
+        size?: number;
         total: number;
     };
     data?: T | null;
@@ -25,14 +25,14 @@ export interface IApiReponse<T> {
 
 export interface IPaginationOptions {
     page?: number;
-    limit?: number;
+    size?: number;
     sortBy?: string;
     sortOrder?: any;
 };
 
 export interface IPaginationOptionsResult {
     page: number;
-    limit: number;
+    size: number;
     skip: number;
     sortBy: string;
     sortOrder: any;

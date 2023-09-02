@@ -1,16 +1,16 @@
-import { IPaginationOptions, IPaginationOptionsResult } from "../../interfaces/types";
+import { IPaginationOptions, IPaginationOptionsResult } from "../interfaces/types";
 
 const calculatePagination = (options: IPaginationOptions): IPaginationOptionsResult => {
   const page = Number(options.page || 1);
-  const limit = Number(options.limit);
-  const skip = (page - 1) * limit;
+  const size = Number(options.size) || 10;
+  const skip = (page - 1) * size;
 
   const sortBy = options.sortBy || 'createdAt';
   const sortOrder = options.sortOrder || 'desc';
 
   return {
     page,
-    limit,
+    size,
     skip,
     sortBy,
     sortOrder,

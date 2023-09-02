@@ -3,6 +3,7 @@ import catchAsync from '../../../utils/helpers/catchAsync';
 import httpStatus from 'http-status'
 import sendResponse from '../../../utils/helpers/SendResponse';
 import prisma from '../../../utils/helpers/prisma';
+import { Category } from '@prisma/client';
 
 
 const CreateCategory: RequestHandler = catchAsync(
@@ -13,7 +14,7 @@ const CreateCategory: RequestHandler = catchAsync(
             data: req.body
         });
 
-        sendResponse(res, {
+        sendResponse<Category>(res, {
             statusCode: httpStatus.OK,
             success: true,
             message: 'Category created successfully!',
