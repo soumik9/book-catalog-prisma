@@ -1,3 +1,5 @@
+import { User } from "@prisma/client";
+
 export type IErrorMessage = {
     path: string | number;
     message: string;
@@ -35,3 +37,8 @@ export interface IPaginationOptionsResult {
     sortBy: string;
     sortOrder: any;
 };
+
+export interface ILoginResponse {
+    accessToken: string;
+    user?: Partial<User>
+}
