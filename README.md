@@ -7,7 +7,7 @@ Book Catalog Routes:
 
 - [x] [POST] - [api/v1/auth/signup]() <br /> <br />
 - [x] [GET] - [api/v1/users]() <br /> <br />
-- [] [SINGLE_GET] - [api/v1/users/6177a5b87d32123f08d2f5d4]() <br /> <br />
+- [x] [SINGLE_GET] - [api/v1/users/6177a5b87d32123f08d2f5d4]() <br /> <br />
 - [] [PATCH] - [api/v1/users/6177a5b87d32123f08d2f5d4]() <br /> <br />
 - [] [DELETE] - [api/v1/users/6177a5b87d32123f08d2f5d4]() <br /> <br />
 - [] [GET] - [api/v1/profile]() <br /> <br />
