@@ -29,7 +29,7 @@ const Signin: RequestHandler = catchAsync(
         const { id, role } = isUserExists;
 
         // creating accesstoken & refreshtoken
-        const accessToken = createToken({ id, role }, process.env.JWT_SECRET as Secret, process.env.JWT_EXPIRES_IN as string);
+        const accessToken = createToken({ userId: id, role }, process.env.JWT_SECRET as Secret, process.env.JWT_EXPIRES_IN as string);
 
         sendResponse<ILoginResponse>(res, {
             statusCode: httpStatus.OK,
