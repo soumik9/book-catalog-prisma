@@ -3,6 +3,7 @@ import express from 'express';
 import authRouter from '../routers/authRouter'
 import userRouter from '../routers/userRouter'
 import categoryRouter from '../routers/categoryRouter'
+import bookRouter from '../routers/bookRouter'
 
 const router = express.Router();
 
@@ -18,6 +19,10 @@ const apiRoutes: { path: string, route: any }[] = [
     {
         path: '/categories',
         route: categoryRouter,
+    },
+    {
+        path: '/books',
+        route: bookRouter,
     },
 ];
 
