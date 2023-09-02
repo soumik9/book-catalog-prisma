@@ -9,7 +9,7 @@ const UpdateBook: RequestHandler = catchAsync(
     async (req: Request, res: Response) => {
 
         // update Category
-        const result = await prisma.category.update({
+        const result = await prisma.book.update({
             where: {
                 id: req.params.id
             },
@@ -19,7 +19,7 @@ const UpdateBook: RequestHandler = catchAsync(
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'Category updated successfully!',
+            message: 'Book updated successfully!',
             data: result,
         });
     }

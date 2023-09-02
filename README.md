@@ -28,8 +28,8 @@ Book Catalog Routes:
 - [] [GET] - [api/v1/books]() <br /> <br />
 - [] [GET] - [api/v1/books/:categoryId/category]() <br /> <br />
 - [x] [GET] - [api/v1/books/4066ca6e-e9d6-415c-b8cc-c49c9ad44d8d]() <br /> <br />
-- [] [PATCH] - [api/v1/books/:id]() <br /> <br />
-- [] [DELETE] - [api/v1/books/:id]() <br /> <br />
+- [x] [PATCH] - [api/v1/books/5b6845b6-6929-4ca6-afe5-011c079b772d]() <br /> <br />
+- [x] [DELETE] - [api/v1/books/fe1c2ba9-55fe-4ba1-849c-786af5453880]() <br /> <br />
 
 ## Order
 <hr />

@@ -9,7 +9,7 @@ const DeleteBook: RequestHandler = catchAsync(
     async (req: Request, res: Response) => {
 
         // delete a category
-        const result = await prisma.category.delete({
+        const result = await prisma.book.delete({
             where: {
                 id: req.params.id
             },
@@ -18,7 +18,7 @@ const DeleteBook: RequestHandler = catchAsync(
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'Category deleted successfully!',
+            message: 'Book is deleted successfully!',
             data: result,
         });
     }
