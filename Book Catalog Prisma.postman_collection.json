@@ -1,0 +1,743 @@
+{
+	"info": {
+		"_postman_id": "b9cfa0d3-8f0c-469f-a775-fba7b47811b8",
+		"name": "Book Catalog Prisma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18583826"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"test\",\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"john123\",\r\n  \"role\": \"customer\",\r\n  \"contactNo\": \"1234567890\",\r\n  \"address\": \"Dhaka, Bangladesh\",\r\n  \"profileImg\": \"user.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}auth/signup",
+							"host": [
+								"{{URL}}auth"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"soumik@example.com\",\r\n  \"password\": \"john123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}auth/signin",
+							"host": [
+								"{{URL}}auth"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}profile",
+							"host": [
+								"{{URL}}profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users - Admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}users",
+							"host": [
+								"{{URL}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a User - Admin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}users/0ff240b3-e402-4cf6-8318-ecda39247095",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"0ff240b3-e402-4cf6-8318-ecda39247095"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User - Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"Naogaon, Bangladesh\",\r\n  \"profileImg\": \"me.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/0ff240b3-e402-4cf6-8318-ecda39247095",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"0ff240b3-e402-4cf6-8318-ecda39247095"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User - Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"address\": \"Naogaon, Bangladesh\",\r\n  \"profileImg\": \"me.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/cf48a96b-2943-47e0-bd07-cdaeccd05ca0",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"cf48a96b-2943-47e0-bd07-cdaeccd05ca0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create Category - Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Sci-Fi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}categories/create-category",
+							"host": [
+								"{{URL}}categories"
+							],
+							"path": [
+								"create-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}categories",
+							"host": [
+								"{{URL}}categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}categories/7f147eb1-5c1c-47a7-85b0-59e9633ee0b1",
+							"host": [
+								"{{URL}}categories"
+							],
+							"path": [
+								"7f147eb1-5c1c-47a7-85b0-59e9633ee0b1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category - Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Fiction\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}categories/e4938d6c-425f-497e-9078-44cc16497ee3",
+							"host": [
+								"{{URL}}categories"
+							],
+							"path": [
+								"e4938d6c-425f-497e-9078-44cc16497ee3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category - Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}categories/efa51c1f-3ebe-4e8d-9b17-702e5f0e5ae4",
+							"host": [
+								"{{URL}}categories"
+							],
+							"path": [
+								"efa51c1f-3ebe-4e8d-9b17-702e5f0e5ae4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Create a Book - Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"testing\",\r\n  \"author\": \"Smith\",\r\n  \"genre\": \"Fantasy\",\r\n  \"price\": 100.00,\r\n  \"publicationDate\": \"1991-04-15T00:00:00Z\",\r\n  \"categoryId\": \"18b9002c-06fb-4b7c-ac91-6bde46252589\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}books/create-book",
+							"host": [
+								"{{URL}}books"
+							],
+							"path": [
+								"create-book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Midnight Secrets\",\r\n  \"author\": \"Jessica Brown\",\r\n  \"genre\": \"Thriller\",\r\n  \"price\": 400.50,\r\n  \"publicationDate\": \"2005-07-15T00:00:00Z\",\r\n  \"categoryId\": \"e69bfef9-33b4-4020-bf59-de52af7f96c1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}books",
+							"host": [
+								"{{URL}}books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Midnight Secrets\",\r\n  \"author\": \"Jessica Brown\",\r\n  \"genre\": \"Thriller\",\r\n  \"price\": 400.50,\r\n  \"publicationDate\": \"2005-07-15T00:00:00Z\",\r\n  \"categoryId\": \"e69bfef9-33b4-4020-bf59-de52af7f96c1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}books/19c0993b-810b-4faa-889e-4e44ec9b95d5",
+							"host": [
+								"{{URL}}books"
+							],
+							"path": [
+								"19c0993b-810b-4faa-889e-4e44ec9b95d5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a book - Admin",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Beyond Time\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}books/de5b4140-6cfb-4fa6-830a-890c6dea1fe9",
+							"host": [
+								"{{URL}}books"
+							],
+							"path": [
+								"de5b4140-6cfb-4fa6-830a-890c6dea1fe9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a book - Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 250.50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}books/06b7131d-569d-4442-82a9-5354e17d2b1e",
+							"host": [
+								"{{URL}}books"
+							],
+							"path": [
+								"06b7131d-569d-4442-82a9-5354e17d2b1e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book with Filtering",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}books?searchTerm=Moonlight",
+							"host": [
+								"{{URL}}books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "price",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "maxPrice",
+									"value": "270",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "bbd07233-e464-460f-98ae-0a1ae38b704c",
+									"disabled": true
+								},
+								{
+									"key": "searchTerm",
+									"value": "Moonlight"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Books Filter with category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}books?categoryId=bbd07233-e464-460f-98ae-0a1ae38b704c",
+							"host": [
+								"{{URL}}books"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "price",
+									"disabled": true
+								},
+								{
+									"key": "sortOrder",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "bbd07233-e464-460f-98ae-0a1ae38b704c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Books By CategoryId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}books/e69bfef9-33b4-4020-bf59-de52af7f96c1/category?page=2&size=1",
+							"host": [
+								"{{URL}}books"
+							],
+							"path": [
+								"e69bfef9-33b4-4020-bf59-de52af7f96c1",
+								"category"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order - Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderedBooks\": [\r\n        {\r\n            \"bookId\": \"e5754733-d607-43a7-b0f1-aff2322183ab\",\r\n            \"quantity\": 3\r\n        },\r\n        {\r\n            \"bookId\": \"19c0993b-810b-4faa-889e-4e44ec9b95d5\",\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}orders/create-order",
+							"host": [
+								"{{URL}}orders"
+							],
+							"path": [
+								"create-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders -  Admin Customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}orders",
+							"host": [
+								"{{URL}}orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Order -  Admin Customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{USER_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}orders/1d393ded-e0aa-48bc-8d46-dffbe1a1e0ff",
+							"host": [
+								"{{URL}}orders"
+							],
+							"path": [
+								"1d393ded-e0aa-48bc-8d46-dffbe1a1e0ff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:6001/api/v1/",
+			"type": "string"
+		}
+	]
+}

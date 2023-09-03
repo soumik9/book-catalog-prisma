@@ -34,8 +34,10 @@ const GetBooks = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 
     const filters = (0, pick_1.default)(req.query, constatnts_1.bookFilterableFields);
     const options = (0, pick_1.default)(req.query, constatnts_1.paginationProps);
     const { size, page, skip } = (0, calculatePagination_1.default)(options);
-    const { searchTerm } = filters, filterData = __rest(filters, ["searchTerm"]);
-    console.log(filters);
+    const { searchTerm, minPrice, maxPrice } = filters, filterData = __rest(filters, ["searchTerm", "minPrice", "maxPrice"]);
+    // Extract minPrice and maxPrice from query parameters
+    const minPriceConverted = parseFloat(req.query.minPrice) || undefined;
+    const maxPriceConverted = parseFloat(req.query.maxPrice) || undefined;
     const andConditions = [];
     // search terms
     if (searchTerm) {
@@ -69,6 +71,21 @@ const GetBooks = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 
             })
         });
     }
+    // Filter books based on minPrice and maxPrice
+    if (minPrice !== undefined) {
+        andConditions.push({
+            price: {
+                gte: minPriceConverted,
+            },
+        });
+    }
+    if (maxPrice !== undefined) {
+        andConditions.push({
+            price: {
+                lte: maxPriceConverted,
+            },
+        });
+    }
     // where condition
     const whereConditions = andConditions.length > 0 ? { AND: andConditions } : {};
     // get all books with filter
@@ -93,6 +110,7 @@ const GetBooks = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 
         message: 'Books retrived successfully!',
         data: result,
         meta: {
+            totalPage: Math.ceil(total / size),
             total,
             page,
             size

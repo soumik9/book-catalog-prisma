@@ -11,8 +11,10 @@ const GetBooks_1 = __importDefault(require("../controllers/book/GetBooks"));
 const CreateBook_1 = __importDefault(require("../controllers/book/CreateBook"));
 const UpdateBook_1 = __importDefault(require("../controllers/book/UpdateBook"));
 const DeleteBook_1 = __importDefault(require("../controllers/book/DeleteBook"));
+const GetBooksByCategoryId_1 = __importDefault(require("../controllers/book/GetBooksByCategoryId"));
 const router = express_1.default.Router();
 //routes
+router.get('/:categoryId/category', GetBooksByCategoryId_1.default);
 router.get('/:id', GetBook_1.default);
 router.get('/', GetBooks_1.default);
 router.post('/create-book', (0, auth_1.default)(constatnts_1.ENUM_USER_ROLE.ADMIN), CreateBook_1.default);
