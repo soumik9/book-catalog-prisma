@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"name\": \"test\",\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"john123\",\r\n  \"role\": \"customer\",\r\n  \"contactNo\": \"1234567890\",\r\n  \"address\": \"Dhaka, Bangladesh\",\r\n  \"profileImg\": \"user.jpg\"\r\n}",
+							"raw": "{\r\n  \"name\": \"test\",\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"john123\",\r\n  \"role\": \"admin\",\r\n  \"contactNo\": \"1234567890\",\r\n  \"address\": \"Dhaka, Bangladesh\",\r\n  \"profileImg\": \"user.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -42,7 +42,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"soumik@example.com\",\r\n  \"password\": \"john123\"\r\n}",
+							"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"john123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -123,12 +123,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{URL}}users/0ff240b3-e402-4cf6-8318-ecda39247095",
+							"raw": "{{URL}}users/2e9c2b92-f6f3-439d-8458-f29c7d75e657",
 							"host": [
 								"{{URL}}users"
 							],
 							"path": [
-								"0ff240b3-e402-4cf6-8318-ecda39247095"
+								"2e9c2b92-f6f3-439d-8458-f29c7d75e657"
 							]
 						}
 					},
@@ -147,7 +147,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"address\": \"Naogaon, Bangladesh\",\r\n  \"profileImg\": \"me.jpg\"\r\n}",
+							"raw": "{\r\n  \"name\": \"John Doe1\",\r\n  \"email\": \"john1@example.com\",\r\n  \"contactNo\": \"01234567890\",\r\n  \"address\": \"Khulna, Bangladesh\",\r\n  \"profileImg\": \"user1.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -155,12 +155,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}users/0ff240b3-e402-4cf6-8318-ecda39247095",
+							"raw": "{{URL}}users/77e78fd3-7f98-4fb3-b4c7-5c3672f11af5",
 							"host": [
 								"{{URL}}users"
 							],
 							"path": [
-								"0ff240b3-e402-4cf6-8318-ecda39247095"
+								"77e78fd3-7f98-4fb3-b4c7-5c3672f11af5"
 							]
 						}
 					},
@@ -187,12 +187,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}users/cf48a96b-2943-47e0-bd07-cdaeccd05ca0",
+							"raw": "{{URL}}users/8518de50-062b-4948-a42b-1dac34b2679d",
 							"host": [
 								"{{URL}}users"
 							],
 							"path": [
-								"cf48a96b-2943-47e0-bd07-cdaeccd05ca0"
+								"8518de50-062b-4948-a42b-1dac34b2679d"
 							]
 						}
 					},
@@ -216,7 +216,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"Sci-Fi\"\r\n}",
+							"raw": "{\r\n  \"title\": \"Programming\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -293,7 +293,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"Fiction\"\r\n}",
+							"raw": "{\r\n  \"title\": \"Psychology\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -301,12 +301,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}categories/e4938d6c-425f-497e-9078-44cc16497ee3",
+							"raw": "{{URL}}categories/4d8e740f-8887-4f24-880b-056206f49fc6",
 							"host": [
 								"{{URL}}categories"
 							],
 							"path": [
-								"e4938d6c-425f-497e-9078-44cc16497ee3"
+								"4d8e740f-8887-4f24-880b-056206f49fc6"
 							]
 						}
 					},
@@ -333,12 +333,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}categories/efa51c1f-3ebe-4e8d-9b17-702e5f0e5ae4",
+							"raw": "{{URL}}categories/27256969-7497-41b8-ae01-d71ee85bdf94",
 							"host": [
 								"{{URL}}categories"
 							],
 							"path": [
-								"efa51c1f-3ebe-4e8d-9b17-702e5f0e5ae4"
+								"27256969-7497-41b8-ae01-d71ee85bdf94"
 							]
 						}
 					},
@@ -362,7 +362,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"testing\",\r\n  \"author\": \"Smith\",\r\n  \"genre\": \"Fantasy\",\r\n  \"price\": 100.00,\r\n  \"publicationDate\": \"1991-04-15T00:00:00Z\",\r\n  \"categoryId\": \"18b9002c-06fb-4b7c-ac91-6bde46252589\"\r\n}\r\n\r\n",
+							"raw": "{\r\n  \"title\": \"test\",\r\n  \"author\": \"Walter Isaacson\",\r\n  \"genre\": \"Thriller\",\r\n  \"price\": 299.99,\r\n  \"publicationDate\": \"2011-10-24\",\r\n  \"categoryId\": \"4f2cadef-a487-4e1b-8347-0fa47959e829\"\r\n}\r\n\r\n\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -461,7 +461,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"title\": \"Beyond Time\"\r\n}",
+							"raw": "{\r\n  \"title\": \"The Catcher in the Rye Part-1\",\r\n  \"author\": \"J.D. John\",\r\n  \"genre\": \"Programming\",\r\n  \"price\": 340.75,\r\n  \"categoryId\": \"15cfc803-84e4-45fa-babb-324073355ade\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -469,12 +469,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}books/de5b4140-6cfb-4fa6-830a-890c6dea1fe9",
+							"raw": "{{URL}}books/f19df1c3-8a17-4bbb-8806-e59c6c7d1811",
 							"host": [
 								"{{URL}}books"
 							],
 							"path": [
-								"de5b4140-6cfb-4fa6-830a-890c6dea1fe9"
+								"f19df1c3-8a17-4bbb-8806-e59c6c7d1811"
 							]
 						}
 					},
@@ -501,12 +501,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{URL}}books/06b7131d-569d-4442-82a9-5354e17d2b1e",
+							"raw": "{{URL}}books/111fe3d4-0618-4d13-a816-5008fecef5bd",
 							"host": [
 								"{{URL}}books"
 							],
 							"path": [
-								"06b7131d-569d-4442-82a9-5354e17d2b1e"
+								"111fe3d4-0618-4d13-a816-5008fecef5bd"
 							]
 						}
 					},
@@ -608,23 +608,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{URL}}books/e69bfef9-33b4-4020-bf59-de52af7f96c1/category?page=2&size=1",
+							"raw": "{{URL}}books/15cfc803-84e4-45fa-babb-324073355ade/category",
 							"host": [
 								"{{URL}}books"
 							],
 							"path": [
-								"e69bfef9-33b4-4020-bf59-de52af7f96c1",
+								"15cfc803-84e4-45fa-babb-324073355ade",
 								"category"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "2"
-								},
-								{
-									"key": "size",
-									"value": "1"
-								}
 							]
 						}
 					},
@@ -648,7 +638,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"orderedBooks\": [\r\n        {\r\n            \"bookId\": \"e5754733-d607-43a7-b0f1-aff2322183ab\",\r\n            \"quantity\": 3\r\n        },\r\n        {\r\n            \"bookId\": \"19c0993b-810b-4faa-889e-4e44ec9b95d5\",\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"orderedBooks\": [\r\n        {\r\n            \"bookId\": \"bb34afce-af33-42b4-b18b-728ef82e0221\",\r\n            \"quantity\": 3\r\n        },\r\n        {\r\n            \"bookId\": \"770655c0-6314-4c85-9cf0-561dd9e5122f\",\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
