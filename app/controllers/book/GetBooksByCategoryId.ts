@@ -93,7 +93,7 @@ const GetBooksByCategoryId: RequestHandler = catchAsync(
                 options.sortBy && options.sortOrder
                     ? { [options.sortBy as string]: options.sortOrder }
                     : {
-                        createdAt: 'desc'
+                        publicationDate: 'desc'
                     }
         });
 

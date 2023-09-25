@@ -21,11 +21,19 @@ const CreateBook = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, voi
     const result = yield prisma_1.default.book.create({
         data: req.body
     });
+    const data = yield prisma_1.default.book.findMany({
+        where: {
+            id: result.id,
+        },
+        include: {
+            category: true
+        }
+    });
     (0, SendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
         message: 'Book created successfully!',
-        data: result,
+        data: data,
     });
 }));
 exports.default = CreateBook;

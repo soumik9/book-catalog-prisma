@@ -30,7 +30,12 @@ const createOrder = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, vo
             },
         },
         include: {
-            orderedBooks: true
+            orderedBooks: {
+                select: {
+                    bookId: true,
+                    quantity: true,
+                }
+            }
         }
     });
     (0, SendResponse_1.default)(res, {

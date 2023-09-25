@@ -39,11 +39,9 @@ const Signin = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0,
     (0, SendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'User logged in successfully!',
-        data: {
-            accessToken,
-            user: isUserExists
-        }
+        message: 'User signin successfully!',
+        data: undefined,
+        token: accessToken,
     });
 }));
 exports.default = Signin;

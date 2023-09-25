@@ -16,49 +16,42 @@ model User {
   contactNo  String
   address    String
   profileImg String
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
   order      Order[]
 
   @@map("users")
 }
 
 model Category {
-  id        String   @id @default(uuid())
-  title     String   @unique
-  books     Book[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id    String @id @default(uuid())
+  title String @unique
+  books Book[]
 
   @@map("categories")
 }
 
 model Book {
-  id              String   @id @default(uuid())
+  id              String @id @default(uuid())
   title           String
   author          String
   price           Float
   genre           String
-  publicationDate DateTime
+  publicationDate String
 
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 
   @@map("books")
 }
 
 model Order {
-  id           String        @id @default(uuid())
-  status       OrderStatus   @default(pending)
-  orderedBooks OrderedBook[]
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  id String @id @default(uuid())
 
   userId String
   user   User   @relation(fields: [userId], references: [id])
+
+  orderedBooks OrderedBook[]
+  status       OrderStatus   @default(pending)
+  createdAt    DateTime      @default(now())
 
   @@map("orders")
 }

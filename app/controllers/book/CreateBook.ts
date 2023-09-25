@@ -13,11 +13,20 @@ const CreateBook: RequestHandler = catchAsync(
             data: req.body
         });
 
+        const data = await prisma.book.findMany({
+            where: {
+                id: result.id,
+            },
+            include: {
+                category: true
+            }
+        });
+
         sendResponse(res, {
             statusCode: httpStatus.OK,
             success: true,
             message: 'Book created successfully!',
-            data: result,
+            data: data,
         });
     }
 )

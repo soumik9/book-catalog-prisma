@@ -22,6 +22,7 @@ export interface IApiReponse<T> {
         totalPage?: number;
     };
     data?: T | null;
+    token?: string | null;
 };
 
 export interface IPaginationOptions {

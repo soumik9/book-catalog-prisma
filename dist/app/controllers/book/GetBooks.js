@@ -99,7 +99,7 @@ const GetBooks = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 
         orderBy: options.sortBy && options.sortOrder
             ? { [options.sortBy]: options.sortOrder }
             : {
-                createdAt: 'desc'
+                publicationDate: 'desc'
             }
     });
     // get total amount of books

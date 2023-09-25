@@ -19,7 +19,7 @@ const GetUser: RequestHandler = catchAsync(
         sendResponse<User>(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'User retrived successfully!',
+            message: 'User getched successfully!',
             data: result,
         });
     }

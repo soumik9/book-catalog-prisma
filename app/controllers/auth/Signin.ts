@@ -34,11 +34,9 @@ const Signin: RequestHandler = catchAsync(
         sendResponse<ILoginResponse>(res, {
             statusCode: httpStatus.OK,
             success: true,
-            message: 'User logged in successfully!',
-            data: {
-                accessToken,
-                user: isUserExists
-            }
+            message: 'User signin successfully!',
+            data: undefined,
+            token: accessToken,
         });
     }
 )

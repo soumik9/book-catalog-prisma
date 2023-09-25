@@ -103,7 +103,7 @@ const GetBooksByCategoryId = (0, catchAsync_1.default)((req, res) => __awaiter(v
         orderBy: options.sortBy && options.sortOrder
             ? { [options.sortBy]: options.sortOrder }
             : {
-                createdAt: 'desc'
+                publicationDate: 'desc'
             }
     });
     // get total amount of books

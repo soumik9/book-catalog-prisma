@@ -21,7 +21,12 @@ const createOrder: RequestHandler = catchAsync(
                 },
             },
             include: {
-                orderedBooks: true
+                orderedBooks: {
+                    select: {
+                        bookId: true,
+                        quantity: true,
+                    }
+                }
             }
         });
 
